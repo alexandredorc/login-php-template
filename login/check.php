@@ -14,7 +14,7 @@ if(isset($_POST['email']) && isset($_POST['password']))
 				$_SESSION['email']=$email;
 				$_SESSION['name']=$data['name'];
 				$_SESSION['user_id']=$data['user_id'];
-				header('Location: ../App/home.php');
+				header('Location: home.php');
 		}
 		else{
 			header('Location: login.php?erreur=1');

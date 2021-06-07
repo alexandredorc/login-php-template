@@ -31,12 +31,6 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `name`, `password`, `email`) VALUES
-(1, 'Martin', 'azerty', 'a*******@gmail.com'),
-(2, 'Maurin', 'password', 'a********@free.fr'),
-(3, 'Dupond', 'test', 'a*********@gmail.fr'),
-(4, 'alex', 'mdp12345', 'a********@gmail.com');
-
 --
 -- Indexes for dumped tables
 --
