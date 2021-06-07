@@ -1,15 +1,16 @@
 <?php
 session_start();
-print_r($_COOKIE);
-echo isset($_COOKIE['auto_login']);
-if(!empty($_COOKIE['auto_login'])){
+
+if(isset($_COOKIE['auto_login'])){
 	$_SESSION['user_id']=$_COOKIE['auto_login'];
-	include 'config.php';
-	$req= $bdd->query('select name, email from user where user_id=\''.$_SESSION['user_id'].'\'');
-	if($data= $req->fetch()){
+	include 'login/config.php';
+
+	$data=user_single_query('user_id',$_SESSION['user_id'],$bdd);
+
+	if($data!=false){
 		$_SESSION['name']=$data['name'];
 		$_SESSION['email']=$data['email'];
-		header('Location:  login/home.php');
+		header('Location:  ../main/index.php');
 	}
 }else{
 	session_destroy();

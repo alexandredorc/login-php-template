@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-if (isset($_GET['logout']) && $_GET['logout']){
-	session_destroy();
-	setcookie('auto_login',NULL ,time()+1);
-	header('Location: login.php');
+if (isset($_SESSION['name'])){
+	include('logout.php');
 }
 ?>
 <!DOCTYPE html>

@@ -10,8 +10,8 @@ if($_POST['name']!==""){
 			header('Location: register.php?erreur=4');
 		}else{
 			include 'config.php';
-			$req= $bdd->query('SELECT * FROM user WHERE email=\''.$_SESSION['temp_email'].'\'' );
-			if($req->fetch()){
+			$data=user_single_query('email',$_SESSION['temp_email'],$bdd);
+			if($data){
 				header('Location: register.php?erreur=5');
 			}
 			else{

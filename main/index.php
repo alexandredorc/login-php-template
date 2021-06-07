@@ -1,12 +1,11 @@
 <?php
 session_start();
-
-
 if (!isset($_SESSION['name'])){
-	header('Location: login.php?logout=true');
+	session_destroy();
+	header('Location: ../login/logout.php');
 }
 
-setcookie('auto_login',$_SESSION['user_id'],time()+120, null, null, false, true);
+setcookie('auto_login',$_SESSION['user_id'],time()+1800, '/', null, false, true);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,7 @@ setcookie('auto_login',$_SESSION['user_id'],time()+120, null, null, false, true)
 <div class="body-center">
 	<h1>Page d'accueil</h1>
 	<h2>bonjour tu viens de te connecter félicitation <?php echo $_SESSION['name']; ?>!!</h2></br>
-	<a href="login.php?logout=true">déconnexion</a>
+	<a href="../login/logout.php">déconnexion</a>
 </div>
 	
 </body>
