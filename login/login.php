@@ -52,7 +52,6 @@ if (isset($_SESSION['name'])){
 				</p>
 				<?php } ?>
 				<div class="excl"><img src = "../public/exclamation-lg.svg"/></div>
-			
 			</div>
 		<?php } ?>
 	</div>
